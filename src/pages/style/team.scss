@@ -1,0 +1,71 @@
+@import "../../index.scss";
+
+.mainDiv {
+  padding: 10rem 1rem;
+  background: #222;
+
+  h1 {
+    text-align: center;
+    color: $lightWhite;
+    line-height: 5rem;
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+  small {
+    color: $lightWhite !important;
+  }
+}
+.subTitle {
+  text-align: center;
+  h5,
+  h6 {
+    color: $lightGreen !important;
+    line-height: 3rem;
+  }
+}
+.sectionWrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  flex-wrap: wrap;
+}
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 23rem;
+  .profileImage {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin: 6rem 0 2rem 0;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+    &:hover {
+      transform: scale(2);
+    }
+  }
+  .profileText {
+    position: absolute;
+    bottom: -3rem;
+    width: 100%;
+    height: 3rem;
+    background: #222;
+    h5,
+    h6 {
+      color: $lightGreen !important;
+      z-index: 2 !important;
+    }
+  }
+}
+#profileImageTaraneh {
+  transform: rotate(45deg);
+  &:hover {
+    transform: scale(2) rotate(45deg);
+  }
+}

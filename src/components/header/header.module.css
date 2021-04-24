@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Lato", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none !important;
+}
+
+body a,
+body a,
+body a:hover,
+body a:focus,
+body a:active {
+  text-decoration: none !important;
+}
+
+body a {
+  color: #292f33;
+  margin: 0;
+}
+
+body a:hover {
+  color: #23d7b2;
+  margin: 0;
+}
+
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #292f33;
+  margin: 0;
+}
+
+body ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.mainWrapper {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #fffafa;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+  height: 15.2rem;
+  z-index: 1000;
+}
+
+.mainWrapper a {
+  font-weight: 700;
+}
+
+.mainWrapper .logo {
+  width: 4rem;
+}
+
+.mainWrapper .logoWrapper {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.mainWrapper .logoWrapper img {
+  width: 7rem;
+}
+
+.mainWrapper .logoWrapper h2 {
+  text-transform: uppercase;
+  font-weight: 700 !important;
+}
+
+.mainWrapper .logoWrapper h5 {
+  text-transform: capitalize;
+  color: #006633 !important;
+}
+
+.mainWrapper .breadWrapper {
+  display: none;
+}
+
+.mainWrapper .middleSection {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 2rem;
+}
+
+.mainWrapper .middleSection a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  text-transform: capitalize;
+}
+
+.mainWrapper .middleSection .links {
+  margin: 0 1rem;
+  width: 7rem;
+  white-space: nowrap;
+  color: #292f33;
+}
+
+.mainWrapper .middleSection .links::after {
+  content: " ";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#23d7b2), color-stop(33%, #00b258), color-stop(66%, #23d7b2), to(#00b258));
+  background: linear-gradient(90deg, #23d7b2 0%, #00b258 33%, #23d7b2 66%, #00b258 100%);
+  width: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.mainWrapper .middleSection .links:hover::after {
+  width: 100%;
+}
+
+.mainWrapper .middleSection .activeLinks {
+  border-bottom: 1px solid #00b258;
+}
+
+.mainWrapper .middleSection .activeLinks a {
+  color: #00b258;
+  font-weight: 700;
+}
+
+.mainWrapper .middleSection .button {
+  background: radial-gradient(#00b258, #006633);
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.129726), 0px 4px 7px rgba(0, 0, 0, 0.11574);
+}
+
+.mainWrapper .middleSection .button a {
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.mainWrapper .middleSection .button a:focus {
+  background: radial-gradient(#006633, #00b258);
+}
+
+@media (max-width: 1200px) {
+  .mainWrapper .middleSection > .links {
+    margin: 0;
+    width: 6.5rem;
+    font-size: 0.9rem;
+  }
+  .mainWrapper .line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainWrapper {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 1rem;
+  }
+  .mainWrapper .logoWrapper img {
+    width: 5rem;
+  }
+  .mainWrapper .logoWrapper h2,
+  .mainWrapper .logoWrapper h5 {
+    font-size: 1rem;
+  }
+  .mainWrapper .middleSection {
+    display: none;
+  }
+  .mainWrapper .middleSection a {
+    height: 2rem;
+  }
+  .mainWrapper .middleSectionMini {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .mainWrapper .middleSectionMini .links {
+    height: 2.2rem;
+  }
+  .mainWrapper .middleSectionMini .line {
+    width: 7rem;
+    background: -webkit-gradient(linear, left top, right top, from(#23d7b2), color-stop(33%, #00b258), color-stop(66%, #23d7b2), to(#00b258));
+    background: linear-gradient(90deg, #23d7b2 0%, #00b258 33%, #23d7b2 66%, #00b258 100%);
+    height: 1px;
+    margin-right: 0;
+  }
+  .mainWrapper .breadWrapper,
+  .mainWrapper .breadWrapperClicked {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 3rem;
+    height: 3rem;
+  }
+  .mainWrapper .breadWrapper::after,
+  .mainWrapper .breadWrapperClicked::after {
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background: #292f33;
+  }
+  .mainWrapper .breadWrapper::before,
+  .mainWrapper .breadWrapperClicked::before {
+    content: " ";
+    height: 3px;
+    width: 100%;
+    background: #292f33;
+  }
+  .mainWrapper .bread {
+    height: 3px;
+    background: #292f33;
+  }
+  .mainWrapper .breadWrapperClicked {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .mainWrapper .breadWrapperClicked .bread {
+    opacity: 0;
+  }
+  .mainWrapper .breadWrapperClicked::after {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .mainWrapper .breadWrapperClicked::before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.mainWrapperScrolled {
+  height: 7rem;
+}
+
+.mainWrapperScrolled .line {
+  width: 2px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#23d7b2), color-stop(33%, #00b258), color-stop(66%, #23d7b2), to(#00b258));
+  background: linear-gradient(#23d7b2 0%, #00b258 33%, #23d7b2 66%, #00b258 100%);
+  margin: 0 1.5rem;
+  height: 4rem;
+}
+
+.scrolledLogoWrapper {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.scrolledLogoWrapper h6 {
+  font-weight: 700 !important;
+}
+
+.flagBig {
+  position: absolute;
+  left: 6.8rem;
+  top: 5.5rem;
+  width: 3rem;
+}
+
+.flag {
+  position: absolute;
+  left: 3.25rem;
+  bottom: 1.2rem;
+  width: 2rem;
+}

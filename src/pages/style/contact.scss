@@ -1,0 +1,134 @@
+@import "../../index.scss";
+.mainDiv {
+  position: relative;
+  padding: 11rem 0 2rem 0;
+  min-height: 100vh;
+  background: url("../../assets/images/banners/David\ pic16.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+  .centeredText {
+    text-align: center;
+  }
+  h1,
+  h4,
+  h5 {
+    font-weight: 700;
+    color: #fff;
+  }
+  h5 {
+    margin-bottom: 2rem;
+  }
+  h4 {
+    margin-top: 4rem;
+    line-height: 2rem;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+  }
+  .title {
+    position: relative;
+    z-index: 10;
+  }
+}
+.innerDiv {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10vw;
+  z-index: 10;
+}
+.leftDiv {
+  width: 35rem;
+}
+.formWrapper {
+  background: $lightGreen;
+  padding: 2rem 1rem 4rem 1rem;
+  width: 30rem;
+}
+.inputWrapper {
+  position: relative;
+  padding: 1rem !important;
+}
+
+.terms {
+  display: flex;
+
+  width: 26rem;
+  a {
+    color: $primaryBlue !important;
+    white-space: nowrap;
+  }
+}
+.button {
+  margin-top: 1rem !important;
+  background: $primaryGreen !important;
+  color: #fff !important;
+  &:disabled {
+    background: $secondaryGrey !important;
+    cursor: pointer !important;
+  }
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alertModal {
+  width: 40vw;
+  text-align: center;
+  h5 {
+    margin: 2rem 1rem;
+    line-height: 2rem;
+    font-weight: normal;
+    color: $primaryBlack !important;
+  }
+  em {
+    text-transform: capitalize;
+  }
+  @media (max-width: $mediumBk) {
+    width: 90vw;
+  }
+}
+.imageWrapper {
+  width: 30vw;
+  object-fit: contain;
+  margin: 4rem auto;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+@media (max-width: $largeBk) {
+  .innerDiv {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .leftDiv,
+  .formWrapper {
+    width: 100%;
+  }
+  .leftDiv {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .terms {
+    flex-wrap: wrap;
+    width: 100%;
+    a {
+      color: $primaryBlue !important;
+      white-space: nowrap;
+    }
+  }
+  .imageWrapper {
+    width: 70vw;
+  }
+}

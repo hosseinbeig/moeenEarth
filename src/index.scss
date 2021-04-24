@@ -1,0 +1,95 @@
+// colors
+$primaryBlack: #292f33;
+$primaryGrey: #66757f;
+$secondaryGrey: #a9a9a9;
+$primaryRed: #ff2400;
+$darkGreen: #006633;
+$primaryGreen: #00b258;
+$secondaryGreen: #23d7b2;
+$lightGreen: #f3f7ed;
+$lightWhite: #f9f9f9;
+$primaryBlue: #00a1f1;
+$primaryYellow: #ffbb00;
+
+// resets
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Lato", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none !important;
+}
+body {
+  a,
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none !important;
+  }
+  a {
+    color: $primaryBlack;
+    margin: 0;
+  }
+  a:hover {
+    color: $secondaryGreen;
+    margin: 0;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $primaryBlack;
+    margin: 0;
+  }
+  ul {
+    text-decoration: none;
+    list-style-type: none;
+  }
+}
+
+// box shadows
+$greyBoxShadow: 1px 0px 1px $primaryGrey, -1px 0px 1px $primaryGrey,
+  0px -1px 1px $primaryGrey, 0px 1px 1px $primaryGrey;
+
+$darkBoxShadow: 0px 0px 1px rgba(0, 0, 0, 0.129726),
+  0px 4px 7px rgba(0, 0, 0, 0.11574);
+// gradient
+$rainbowGradientV: linear-gradient(
+  $secondaryGreen 0%,
+  $primaryGreen 33%,
+  $secondaryGreen 66%,
+  $primaryGreen 100%
+);
+$rainbowGradient: linear-gradient(
+  90deg,
+  $secondaryGreen 0%,
+  $primaryGreen 33%,
+  $secondaryGreen 66%,
+  $primaryGreen 100%
+);
+$greenRadialGradient: radial-gradient($primaryGreen, $darkGreen);
+$greenRadialGradientV: radial-gradient($darkGreen, $primaryGreen);
+// Header default styles
+
+// break points
+
+// Small devices (landscape phones, 576px and up)
+$smallBk: 576px;
+
+// Medium devices (tablets, 768px and up)
+$mediumBk: 768px;
+
+// Large devices (desktops, 992px and up)
+$largeBk: 992px;
+
+// Extra large devices (large desktops, 1200px and up)
+$xLargeBk: 1200px;

@@ -1,0 +1,130 @@
+@import "../../index.scss";
+
+.mainDiv {
+  position: relative;
+  padding: 11rem 0 2rem 0;
+  min-height: 100vh;
+  background: url("../../assets/images/banners/David51.jpg");
+  background-attachment: fixed;
+  background-position: center 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .centeredText {
+    text-align: center;
+  }
+  h1,
+  h4 {
+    color: #fff;
+  }
+
+  h4 {
+    margin-top: 4rem;
+    line-height: 2rem;
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+  }
+  .title {
+    position: relative;
+    z-index: 10;
+  }
+}
+.innerDiv {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10vw;
+  z-index: 10;
+}
+.rightDiv {
+  width: 35rem;
+}
+.formWrapper {
+  background: $lightGreen;
+  padding: 4rem 1rem;
+  width: 30rem;
+}
+.inputWrapper {
+  position: relative;
+  padding: 1rem !important;
+}
+.terms {
+  display: flex;
+
+  width: 26rem;
+  a {
+    color: $primaryBlue !important;
+    white-space: nowrap;
+  }
+}
+.button {
+  margin-top: 1rem !important;
+  background: $primaryGreen !important;
+  color: #fff !important;
+  &:disabled {
+    background: $secondaryGrey !important;
+    cursor: pointer !important;
+  }
+}
+.selectInput {
+  width: 100%;
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alertModal {
+  width: 55vw;
+  text-align: center;
+  h5 {
+    margin: 2rem 1rem;
+    line-height: 2rem;
+  }
+  em {
+    text-transform: capitalize;
+  }
+  @media (max-width: $mediumBk) {
+    width: 90vw;
+    height: 60vh;
+    overflow: scroll;
+  }
+}
+
+.datePicker {
+  width: 100%;
+}
+.backButton {
+  position: relative;
+  top: 0.5rem;
+}
+@media (max-width: $largeBk) {
+  .innerDiv {
+    flex-direction: column-reverse;
+    padding: 0.5rem;
+  }
+  .rightDiv,
+  .formWrapper {
+    width: 100%;
+  }
+  .rightDiv {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .terms {
+    flex-wrap: wrap;
+    width: 100%;
+    a {
+      color: $primaryBlue !important;
+      white-space: nowrap;
+    }
+  }
+}

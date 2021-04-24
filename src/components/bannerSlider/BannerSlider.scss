@@ -1,0 +1,27 @@
+@import "../../index.scss";
+.InnerDiv {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  scroll-behavior: smooth;
+  box-shadow: $darkBoxShadow;
+}
+
+// .Overlay {
+//   background: linear-gradient(
+//     90deg,
+//     rgba(0, 0, 0, 0.6) 0%,
+//     rgba(0, 0, 0, 0.15) 100%
+//   );
+//   background-blend-mode: multiply;
+//   padding: 1rem;
+//   height: 100%;
+// }
+.BannerItem {
+  overflow: hidden;
+  height: 10vw;
+  background-size: contain;
+  min-width: 15vw;
+  background-repeat: no-repeat;
+}

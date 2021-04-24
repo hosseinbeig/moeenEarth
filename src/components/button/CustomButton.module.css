@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Lato", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none !important;
+}
+
+body a,
+body a,
+body a:hover,
+body a:focus,
+body a:active {
+  text-decoration: none !important;
+}
+
+body a {
+  color: #292f33;
+  margin: 0;
+}
+
+body a:hover {
+  color: #23d7b2;
+  margin: 0;
+}
+
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #292f33;
+  margin: 0;
+}
+
+body ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.main {
+  display: inline;
+  padding: 1rem !important;
+  border-radius: 2rem;
+  background: radial-gradient(#00b258, #006633);
+  cursor: pointer;
+}
+
+.main a {
+  color: #fff !important;
+  font-weight: 600;
+  padding: 1rem !important;
+}
+
+.main:hover {
+  background: radial-gradient(#006633, #00b258);
+}

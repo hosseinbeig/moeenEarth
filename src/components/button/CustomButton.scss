@@ -1,0 +1,16 @@
+@import "../../index.scss";
+.main {
+  display: inline;
+  padding: 1rem !important;
+  border-radius: 2rem;
+  & a {
+    color: #fff !important;
+    font-weight: 600;
+    padding: 1rem !important;
+  }
+  background: $greenRadialGradient;
+  &:hover {
+    background: $greenRadialGradientV;
+  }
+  cursor: pointer;
+}

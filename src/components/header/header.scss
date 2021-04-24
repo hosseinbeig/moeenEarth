@@ -1,0 +1,213 @@
+@import "../../index.scss";
+
+.mainWrapper {
+  transition: all 0.4s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffafa;
+  box-shadow: $darkBoxShadow;
+  height: 15.2rem;
+  z-index: 1000;
+  a {
+    font-weight: 700;
+  }
+  .logo {
+    width: 4rem;
+  }
+  .logoWrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img {
+      width: 7rem;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: 700 !important;
+    }
+    h5 {
+      text-transform: capitalize;
+      color: $darkGreen !important;
+    }
+  }
+
+  .breadWrapper {
+    display: none;
+  }
+
+  .middleSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 5rem;
+      text-transform: capitalize;
+    }
+    .links {
+      margin: 0 1rem;
+      width: 7rem;
+      white-space: nowrap;
+      color: $primaryBlack;
+      &::after {
+        content: " ";
+        display: flex;
+        height: 1px;
+        background: $rainbowGradient;
+        width: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+    .activeLinks {
+      a {
+        color: $primaryGreen;
+        font-weight: 700;
+      }
+      border-bottom: 1px solid $primaryGreen;
+    }
+    .button {
+      background: $greenRadialGradient;
+      box-shadow: $darkBoxShadow;
+      & a {
+        font-weight: 700;
+        color: #fff !important;
+        &:focus {
+          background: $greenRadialGradientV;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $xLargeBk) {
+    .middleSection > .links {
+      margin: 0;
+      width: 6.5rem;
+      font-size: 0.9rem;
+    }
+    .line {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mediumBk) {
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    .logoWrapper {
+      img {
+        width: 5rem;
+      }
+      h2,
+      h5 {
+        font-size: 1rem;
+      }
+    }
+
+    .middleSection {
+      display: none;
+      a {
+        height: 2rem;
+      }
+    }
+    .middleSectionMini {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+      .links {
+        height: 2.2rem;
+      }
+      .line {
+        width: 7rem;
+        background: $rainbowGradient;
+        height: 1px;
+        margin-right: 0;
+      }
+    
+    }
+    .breadWrapper,
+    .breadWrapperClicked {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 3rem;
+      height: 3rem;
+      &::after {
+        content: " ";
+        width: 100%;
+        height: 3px;
+        background: $primaryBlack;
+      }
+      &::before {
+        content: " ";
+        height: 3px;
+        width: 100%;
+        background: $primaryBlack;
+      }
+    }
+    .bread {
+      height: 3px;
+      background: $primaryBlack;
+    }
+    .breadWrapperClicked {
+      justify-content: center;
+
+      .bread {
+        opacity: 0;
+      }
+      &::after {
+        transform: rotate(135deg);
+        transition: all 0.3s ease-in-out;
+      }
+      &::before {
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+ 
+}
+.mainWrapperScrolled {
+  height: 7rem;
+  .line {
+    width: 2px;
+    background: $rainbowGradientV;
+    margin: 0 1.5rem;
+    height: 4rem;
+  }
+}
+.scrolledLogoWrapper {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  h6 {
+    font-weight: 700 !important;
+  }
+}
+.flagBig {
+  position: absolute;
+  left: 6.8rem;
+  top: 5.5rem;
+  width: 3rem;
+}
+.flag {
+  position: absolute;
+  left: 3.25rem;
+  bottom: 1.2rem;
+  width: 2rem;
+}

@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Lato", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none !important;
+}
+
+body a,
+body a,
+body a:hover,
+body a:focus,
+body a:active {
+  text-decoration: none !important;
+}
+
+body a {
+  color: #292f33;
+  margin: 0;
+}
+
+body a:hover {
+  color: #23d7b2;
+  margin: 0;
+}
+
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #292f33;
+  margin: 0;
+}
+
+body ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.mainDiv {
+  padding: 10rem 1rem;
+  background: #222;
+}
+
+.mainDiv h1 {
+  text-align: center;
+  color: #f9f9f9;
+  line-height: 5rem;
+}
+
+.mainDiv h5 {
+  text-transform: uppercase;
+}
+
+.mainDiv small {
+  color: #f9f9f9 !important;
+}
+
+.subTitle {
+  text-align: center;
+}
+
+.subTitle h5,
+.subTitle h6 {
+  color: #f3f7ed !important;
+  line-height: 3rem;
+}
+
+.sectionWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 23rem;
+}
+
+.section .profileImage {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 6rem 0 2rem 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section .profileImage:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.section .profileText {
+  position: absolute;
+  bottom: -3rem;
+  width: 100%;
+  height: 3rem;
+  background: #222;
+}
+
+.section .profileText h5,
+.section .profileText h6 {
+  color: #f3f7ed !important;
+  z-index: 2 !important;
+}
+
+#profileImageTaraneh {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#profileImageTaraneh:hover {
+  -webkit-transform: scale(2) rotate(45deg);
+          transform: scale(2) rotate(45deg);
+}
