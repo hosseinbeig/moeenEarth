@@ -1,10 +1,12 @@
-import React from "react";
-import styles from "./style/home.module.css";
-import images from "../assets/images/index";
-import { Carousel } from "react-bootstrap";
-import Typist from "react-typist";
-import CustomButton from "../components/button/CustomButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext } from 'react';
+import styles from './style/home.module.css';
+import images from '../Assets/images/index';
+import { Carousel } from 'react-bootstrap';
+import Typist from 'react-typist';
+import CustomButton from '../Components/button/CustomButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MetaDecorator from '../Utils/MetaDecorator';
+import { LangContext } from '../Context/MainContext';
 
 import {
   faPeopleArrows,
@@ -13,55 +15,77 @@ import {
   faUniversity,
   faPlaneDeparture,
   faPlaneArrival,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 const carouselData = [
   {
     src: images.common.carousel4,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel2,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel3,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel1,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel5,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel6,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
   {
     src: images.common.carousel7,
-    header: "Do you want to study abroad?",
-    label: "Get in touch now!",
-    text: "Let us help to unlock your dream for a successful life",
+    header: 'Do you want to study abroad?',
+    label: 'Get in touch now!',
+    text: 'Let us help to unlock your dream for a successful life',
   },
 ];
 
 const Home = () => {
+  const [selectedLang] = useContext(LangContext);
+
+  const metaData =
+    selectedLang === 'far'
+      ? {
+          title: 'خانه',
+          description: 'صفحه اصلی زمین سبز',
+          lang: 'fa',
+          dir: 'rtl',
+        }
+      : {
+          title: 'Home',
+          description: 'Home Green Earth',
+          lang: 'en',
+          dir: 'ltr',
+        };
   return (
     <div>
+      <MetaDecorator
+        title={metaData.title}
+        description={metaData.description}
+        lang={metaData.lang}
+        dir={metaData.dir}
+      />
       <div className={styles.carouselContainer}>
         <Carousel>
           {carouselData.map((item, index) => {
@@ -79,7 +103,14 @@ const Home = () => {
                   </Typist>
                   <h3>{item.label}</h3>
                   <p>{item.text}</p>
-                  <CustomButton to="/apply" text="Apply Now" />
+                  <CustomButton
+                    to="/apply"
+                    text={
+                      selectedLang === 'far'
+                        ? 'با ما همراه شوید'
+                        : 'Contribute Now'
+                    }
+                  />
                 </Carousel.Caption>
               </Carousel.Item>
             );

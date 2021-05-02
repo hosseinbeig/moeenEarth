@@ -1,6 +1,6 @@
 import React from "react";
 import Typist from "react-typist";
-import CustomButton from "../components/button/CustomButton";
+import CustomButton from "../Components/button/CustomButton";
 import styles from "./style/services.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

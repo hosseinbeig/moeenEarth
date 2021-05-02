@@ -1,5 +1,5 @@
 import React from "react";
-import images from "../assets/images/index";
+import images from "../Assets/images/index";
 import styles from "./style/team.module.css";
 import Typist from "react-typist";
 
@@ -22,25 +22,25 @@ const Team = () => {
         <section className={styles.section}>
           <img
             src={images.common.david}
-            alt="david"
+            alt="Moein"
             className={styles.profileImage}
           />
 
           <div className={styles.profileText}>
-            <h5>David Ebubechukwu Nwobodo</h5>
-            <h6>CEO Study Diamond Ltd.</h6>
+            <h5>Moein Teymoori</h5>
+            <h6>CEO Green Earth Ltd.</h6>
           </div>
         </section>
         <section className={styles.section}>
           <img
             id={styles.laleh}
             src={images.common.laleh}
-            alt="laleh"
+            alt="Hossein"
             className={styles.profileImage}
           />
           <div className={styles.profileText}>
-            <h5>Dr. Laleh Mousavi</h5>
-            <h6>Co-founder Study Diamond Ltd.</h6>
+            <h5>Hossein Beigzadeh</h5>
+            <h6>Co-founder Green Earth Ltd.</h6>
           </div>
         </section>
         <section className={styles.section}>
@@ -124,7 +124,7 @@ const Team = () => {
           <div className={styles.profileText}>
             <h5>Aniedi Attah</h5>
             <h6>
-            Marketing Manager <br />
+              Marketing Manager <br />
             </h6>
           </div>
         </section>

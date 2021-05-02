@@ -1,10 +1,16 @@
 .wrapper {
-  width: 2rem;
+  width: 3rem;
 }
-
-.image {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
+.irFlag,
+.enFlag {
+  display: inline-block;
   object-fit: contain;
+}
+.irFlag {
+  max-width: 2em;
+  max-height: 2em;
+}
+.enFlag {
+  max-width: 1.7em;
+  max-height: 1.7em;
 }

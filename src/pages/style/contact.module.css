@@ -48,11 +48,11 @@ body ul {
   position: relative;
   padding: 11rem 0 2rem 0;
   min-height: 100vh;
-  background: url("../../assets/images/banners/David pic16.jpg");
+  background: url("../../Assets/images/banners/contact-bg.jpg");
   background-attachment: fixed;
   background-position: center;
-  background-repeat: repeat;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainDiv .centeredText {

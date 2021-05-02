@@ -1,17 +1,17 @@
-import React from "react";
-import BannerSlider from "../../components/bannerSlider/BannerSlider.js";
-import images from "../../assets/images";
-import styles from "./footer.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import BannerSlider from '../../Components/bannerSlider/BannerSlider.js';
+import images from '../../Assets/images';
+import styles from './footer.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faInstagram,
   faWhatsapp,
   faInstagramSquare,
-} from "@fortawesome/free-brands-svg-icons";
-import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
-import CadFlag from "../ui/canadaFlag.js";
-import NigFlag from "../ui/nigeriaFlag.js";
+} from '@fortawesome/free-brands-svg-icons';
+import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
+import IranFlag from '../ui/flags.js';
+const todayDate = new Date().getFullYear();
 const bannersData = [
   {
     background: images.common.partner1,
@@ -69,20 +69,8 @@ const Footer = () => {
           <section>
             <address>
               <div className={styles.leftAddress}>
-                <NigFlag />
-                NIGERIAN ADDRESS: <br />
-                Suit 516, 5th floor, The Kings Plaza,
-                <br /> Ahmadu Bello Way,
-                <br />
-                Along Next Cash and Carry, <br /> Kado Abuja, Nigeria. <br />
-                PHONE: +234 7042400457 +17786975316
-                <br /> EMAIL: info@studydiamond.ca <br />
-                WORKING HOURS: Monday - Friday: 9AM to 5PM <br />
-                Saturday - Sunday: Best not to Ask
-              </div>
-              <div className={styles.rightAddress}>
-                <CadFlag />
-                CANADA HEAD OFFICE:
+                <IranFlag />
+                IRAN HEAD OFFICE:
                 <br />
                 #1005, 409 Granville St.
                 <br />
@@ -92,56 +80,93 @@ const Footer = () => {
                 <br />
                 EMAIL: Africa@study2020.ca
               </div>
+
+              <div className={styles.socialWrapper}>
+                <h3>find us here</h3>
+                <a
+                  href="https://www.facebook.com/studydiamond.consultancy"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.socials}
+                >
+                  <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  <small>facebook</small>
+                </a>
+                <a
+                  href="https://www.instagram.com/studydiamondltd/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.socials}
+                >
+                  <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  <small>instagram</small>
+                </a>
+                <a
+                  href="https://www.instagram.com/study2020.africa/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.socials}
+                >
+                  <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
+                  <small>instagram africa</small>
+                </a>
+                <a
+                  href="https://wa.me/17786975316"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.socials}
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+                  <small>whatsapp</small>
+                </a>
+              </div>
             </address>
           </section>
 
-          <section>
-            <h3>find us here</h3>
-            <div className={styles.socialWrapper}>
+          <section className={styles.rightSection}>
+            <small>
               <a
-                href="https://www.facebook.com/studydiamond.consultancy"
+                href="https://www.freepik.com/vectors/tree"
                 target="_blank"
                 rel="noreferrer noopener"
-                className={styles.socials}
               >
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
-                <small>facebook</small>
+                Tree vector created by pch.vector - www.freepik.com
               </a>
+            </small>
+            <small>
               <a
-                href="https://www.instagram.com/studydiamondltd/"
+                href="https://www.freepik.com/vectors/frame"
                 target="_blank"
                 rel="noreferrer noopener"
-                className={styles.socials}
               >
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-                <small>instagram</small>
+                Frame vector created by brgfx - www.freepik.com
               </a>
-              <a
-                href="https://www.instagram.com/study2020.africa/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles.socials}
-              >
-                <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
-                <small>instagram africa</small>
-              </a>
-              <a
-                href="https://wa.me/17786975316"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={styles.socials}
-              >
-                <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-                <small>whatsapp</small>
-              </a>
-            </div>
-            <small id={styles.vectors}>
+            </small>
+            <small>
               <a
                 href="https://www.freepik.com/vectors/business"
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 Business vector created by stories - www.freepik.com
+              </a>
+            </small>
+            <small>
+              Image by
+              <a
+                href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=38754"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Clker-Free-Vector-Images
+              </a>
+              from{' '}
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=38754"
+              >
+                Pixabay
               </a>
             </small>
           </section>
@@ -151,12 +176,10 @@ const Footer = () => {
             icon={faChevronCircleUp}
             size="3x"
             className={styles.chevron}
-            onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+            onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
             title="back to top"
           />
-          <p>
-            © 2020 Study Diamond Educational Consultants. All Right Reserved.
-          </p>
+          <p>© {todayDate} GreenEarth. All Right Reserved.</p>
         </footer>
       </footer>
     </>

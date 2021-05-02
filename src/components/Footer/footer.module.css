@@ -71,16 +71,6 @@ body ul {
   text-transform: capitalize;
 }
 
-.main .leftAddress {
-  border-right: #00b258 2px solid;
-  padding-right: 2rem;
-  min-width: 50%;
-}
-
-.main .rightAddress {
-  padding-left: 2rem;
-}
-
 .socialWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,7 +82,11 @@ body ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 75%;
+  padding-left: 2rem;
+}
+
+.socialWrapper h3 {
+  margin: 0 0 5px 0;
 }
 
 .socialWrapper a {
@@ -125,6 +119,31 @@ body ul {
   padding: 2rem;
 }
 
+.rowWrapper .leftAddress {
+  border-right: #00b258 2px solid;
+  padding-right: 2rem;
+  min-width: 50%;
+}
+
+.rowWrapper .rightSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  margin: 0 3rem -2rem 0;
+  min-height: 100%;
+}
+
 @media (max-width: 992px) {
   .rowWrapper {
     -ms-flex-wrap: wrap;
@@ -137,6 +156,7 @@ body ul {
     padding: 0;
   }
   .rowWrapper address {
+    z-index: 111;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 80vw;
@@ -147,15 +167,20 @@ body ul {
     border-right: none;
     padding-right: 0;
   }
-  .rowWrapper address .rightAddress {
-    padding-left: 0;
-    padding-top: 2rem;
-  }
 }
 
 @media (max-width: 576px) {
   .rowWrapper section {
     width: 90vw;
+  }
+  .rowWrapper .socialWrapper {
+    padding-left: 0;
+  }
+  .rowWrapper .socialWrapper h3 {
+    margin-top: 1rem;
+  }
+  .rowWrapper .socialWrapper a {
+    margin: 5px 0;
   }
 }
 

@@ -4,8 +4,8 @@ import Typist from "react-typist";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 import styles from "./style/apply.module.css";
-import CustomTextField from "../components/ui/inputs/textInput";
-import CustomRadioField from "../components/ui/inputs/radio";
+import CustomTextField from "../Components/ui/inputs/textInput";
+import CustomRadioField from "../Components/ui/inputs/radio";
 import moment from "moment";
 import { Alert } from "react-bootstrap";
 import Modal from "@material-ui/core/Modal";
@@ -18,20 +18,20 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@material-ui/core";
-import PhoneNumberInput from "../components/ui/inputs/numberInput";
+import PhoneNumberInput from "../Components/ui/inputs/numberInput";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import CustomDatePicker from "../components/ui/inputs/datePicker";
-import CustomSelectField from "../components/ui/inputs/select";
+import CustomDatePicker from "../Components/ui/inputs/datePicker";
+import CustomSelectField from "../Components/ui/inputs/select";
 
 import {
   counties,
   nationalities,
   eduLevel,
   interestedStudyLevel,
-} from "../assets/data/data-list";
-import CircularStatic from "../components/ui/loader/loader";
+} from "../Assets/data/data-list";
+import CircularStatic from "../Components/ui/loader/loader";
 
 const validationSchema = yup.object({
 

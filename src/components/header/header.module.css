@@ -146,7 +146,7 @@ body ul {
 }
 
 .mainWrapper .middleSection .links::after {
-  content: " ";
+  content: ' ';
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,14 +263,14 @@ body ul {
   }
   .mainWrapper .breadWrapper::after,
   .mainWrapper .breadWrapperClicked::after {
-    content: " ";
+    content: ' ';
     width: 100%;
     height: 3px;
     background: #292f33;
   }
   .mainWrapper .breadWrapper::before,
   .mainWrapper .breadWrapperClicked::before {
-    content: " ";
+    content: ' ';
     height: 3px;
     width: 100%;
     background: #292f33;
@@ -323,16 +323,11 @@ body ul {
   font-weight: 700 !important;
 }
 
-.flagBig {
-  position: absolute;
-  left: 6.8rem;
-  top: 5.5rem;
-  width: 3rem;
+.flag {
+  cursor: pointer;
 }
 
-.flag {
-  position: absolute;
-  left: 3.25rem;
-  bottom: 1.2rem;
-  width: 2rem;
+.flagDisabled {
+  opacity: 0.5;
+  cursor: no-drop !important;
 }

@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import styles from "./header.module.css";
-import logo from "../../assets/images/brand-trans.png";
-import images from "../../assets/images";
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './header.module.css';
+import logo from '../../Assets/images/brand-trans.png';
+import images from '../../Assets/images';
+import IranFlag, { EnglishFlag } from '../ui/flags';
+import { LangContext } from '../../Context/MainContext';
 
 const Header = () => {
+  const [selectedLang, setSelectedLang] = useContext(LangContext);
   const [breadClicked, setBreadClicked] = useState(false);
   const [selected, setSelected] = useState(0);
   const [scrolled, setScrolled] = useState(true);
@@ -28,55 +31,78 @@ const Header = () => {
   }
   const onLinkClick = (index) => {
     setSelected(index);
-    window.scroll({ top: 0, behavior: "smooth" });
+    window.scroll({ top: 0, behavior: 'smooth' });
     setBreadClicked(!breadClicked);
     setScrolled(true);
   };
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    document.addEventListener('scroll', () => {
       setScrolled(true);
       setBreadClicked(false);
     });
     return () => {
-      document.removeEventListener("scroll", () => {
+      document.removeEventListener('scroll', () => {
         setScrolled(true);
       });
     };
   }, []);
-  const navbarData = [
+  const navbarDataFar = [
     {
-      label: "Home",
-      to: "/",
+      label: 'صفحه اصلی',
+      to: '/',
     },
     {
-      label: " Our Services",
-      to: "/services",
+      label: 'خدمات ما',
+      to: '/services',
     },
     {
-      label: "Our Team",
-      to: "/team",
+      label: 'تیم ما',
+      to: '/team',
     },
-    // {
-    //   label: "Contact Us",
-    //   to: "/contact",
-    // },
     {
-      label: "apply",
-      to: "/apply",
+      label: 'ارتباط با ما',
+      to: '/contact',
+    },
+    {
+      label: 'همراه شدن با ما',
+      to: '/apply',
       button: true,
     },
+  ];
+  const navbarDataEn = [
     {
-      label: "Portal Login",
-      href: "http://study2020portal.com/login",
+      label: 'Home',
+      to: '/',
+    },
+    {
+      label: ' Our Services',
+      to: '/services',
+    },
+    {
+      label: 'Our Team',
+      to: '/team',
+    },
+    {
+      label: 'Contact Us',
+      to: '/contact',
+    },
+    {
+      label: 'Contribute',
+      to: '/apply',
+      button: true,
     },
   ];
- const handleMouseEnter = () => {
-    setScrolled(false) 
-  }
- const handleMouseExist = () => {
-    setScrolled(true) 
-    setBreadClicked(false)
-  }
+  const handleMouseEnter = () => {
+    setScrolled(false);
+  };
+  const handleMouseExist = () => {
+    setScrolled(true);
+    setBreadClicked(false);
+  };
+
+  const farSelected =
+    selectedLang === 'far' ? styles.flagDisabled : styles.flag;
+  const enSelected = selectedLang === 'en' ? styles.flagDisabled : styles.flag;
 
   return (
     <nav
@@ -85,49 +111,76 @@ const Header = () => {
       onMouseLeave={handleMouseExist}
     >
       <ul className={wrapperStyles}>
+        <a className={farSelected} onClick={() => setSelectedLang('far')}>
+          <IranFlag />
+        </a>
+        <a className={enSelected} onClick={() => setSelectedLang('en')}>
+          <EnglishFlag />
+        </a>
         {scrolled ? (
           <div className={styles.scrolledLogoWrapper}>
             <Link to="/">
-              <img src={logo} alt="diamond logo" className={styles.logo} />
+              <img src={logo} alt="Earth logo" className={styles.logo} />
             </Link>
-            <h6>study diamond</h6>
+            <h6>{selectedLang === 'far' ? 'زمین سبز' : 'Green Earth'}</h6>
           </div>
         ) : (
           <div className={styles.logoWrapper}>
             <Link to="/">
-              <img src={images.common.brandTrans} alt="diamond logo" />
-              <h2>study diamond</h2>
-              <h5>
-                educational <br /> consulting <br /> firm
-              </h5>
+              <img src={images.common.brandTrans} alt="Earth logo" />
+              <h2>{selectedLang === 'far' ? 'زمین سبز' : 'Green Earth'}</h2>
             </Link>
           </div>
         )}
         <div className={styles.line} />
         <section className={midSecStyles}>
-          {navbarData.map((item, index) => {
-            return (
-              <li
-                className={
-                  item.button
-                    ? selected === index
-                      ? `${styles.links} ${styles.activeLinks} ${styles.button}`
-                      : `${styles.links} ${styles.button}`
-                    : selected === index
-                    ? `${styles.links} ${styles.activeLinks}`
-                    : styles.links
-                }
-                key={index}
-                onClick={() => onLinkClick(index)}
-              >
-                {item.href ? (
-                  <a href={item.href}>{item.label}</a>
-                ) : (
-                  <Link to={item.to}>{item.label}</Link>
-                )}
-              </li>
-            );
-          })}
+          {selectedLang === 'far'
+            ? navbarDataFar.map((item, index) => {
+                return (
+                  <li
+                    className={
+                      item.button
+                        ? selected === index
+                          ? `${styles.links} ${styles.activeLinks} ${styles.button}`
+                          : `${styles.links} ${styles.button}`
+                        : selected === index
+                        ? `${styles.links} ${styles.activeLinks}`
+                        : styles.links
+                    }
+                    key={index}
+                    onClick={() => onLinkClick(index)}
+                  >
+                    {item.href ? (
+                      <a href={item.href}>{item.label}</a>
+                    ) : (
+                      <Link to={item.to}>{item.label}</Link>
+                    )}
+                  </li>
+                );
+              })
+            : navbarDataEn.map((item, index) => {
+                return (
+                  <li
+                    className={
+                      item.button
+                        ? selected === index
+                          ? `${styles.links} ${styles.activeLinks} ${styles.button}`
+                          : `${styles.links} ${styles.button}`
+                        : selected === index
+                        ? `${styles.links} ${styles.activeLinks}`
+                        : styles.links
+                    }
+                    key={index}
+                    onClick={() => onLinkClick(index)}
+                  >
+                    {item.href ? (
+                      <a href={item.href}>{item.label}</a>
+                    ) : (
+                      <Link to={item.to}>{item.label}</Link>
+                    )}
+                  </li>
+                );
+              })}
         </section>
         <li className={breadStyles} onClick={breadCrumbsHandler}>
           <div className={styles.bread} />
