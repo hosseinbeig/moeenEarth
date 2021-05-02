@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styles from './style/home.module.css';
 import images from '../Assets/images/index';
 import { Carousel } from 'react-bootstrap';
-import Typist from 'react-typist';
 import CustomButton from '../Components/button/CustomButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MetaDecorator from '../Utils/MetaDecorator';
@@ -16,54 +15,12 @@ import {
   faPlaneDeparture,
   faPlaneArrival,
 } from '@fortawesome/free-solid-svg-icons';
-const carouselData = [
-  {
-    src: images.common.carousel4,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel2,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel3,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel1,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel5,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel6,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-  {
-    src: images.common.carousel7,
-    header: 'Do you want to study abroad?',
-    label: 'Get in touch now!',
-    text: 'Let us help to unlock your dream for a successful life',
-  },
-];
+import { mainDescription } from '../Assets/data/multi-ling';
 
 const Home = () => {
   const [selectedLang] = useContext(LangContext);
 
+  const dataAlignment = selectedLang === 'far' ? 'right' : 'left';
   const metaData =
     selectedLang === 'far'
       ? {
@@ -78,8 +35,81 @@ const Home = () => {
           lang: 'en',
           dir: 'ltr',
         };
+
+  const carouselData = [
+    {
+      src: images.common.carousel4,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel2,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel3,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel1,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel5,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel6,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+    {
+      src: images.common.carousel7,
+      header:
+        selectedLang === 'far' ? 'توضیح فارسی' : 'Do you want to study abroad?',
+      label: selectedLang === 'far' ? 'فارسی' : 'Get in touch now!',
+      text:
+        selectedLang === 'far'
+          ? 'فارسی'
+          : 'Let us help to unlock your dream for a successful life',
+    },
+  ];
   return (
-    <div>
+    <div style={{ textAlign: dataAlignment }}>
       <MetaDecorator
         title={metaData.title}
         description={metaData.description}
@@ -98,9 +128,7 @@ const Home = () => {
                 />
 
                 <Carousel.Caption className={styles.carouselCaption}>
-                  <Typist>
-                    <h1>{item.header}</h1>
-                  </Typist>
+                  <h1>{item.header}</h1>
                   <h3>{item.label}</h3>
                   <p>{item.text}</p>
                   <CustomButton
@@ -121,12 +149,9 @@ const Home = () => {
       <div className={styles.container}>
         <div className={styles.mainLabel}>
           <h4>
-            Study Diamond Consultancy Ltd. is best known for international
-            students services. We assist students to persue education abroad at
-            all levels from primary school to Ph.D. and in different
-            destinations such as Canada, Hungary, Malaysia, Spain, Germany,
-            Switzerland, etc.
+            {selectedLang === 'far' ? mainDescription.far : mainDescription.en}
           </h4>
+          <br />
         </div>
         <section className={styles.sectionColumn}>
           <article className={styles.sectionArticle}>

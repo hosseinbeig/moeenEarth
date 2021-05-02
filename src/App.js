@@ -10,6 +10,7 @@ import Services from './Pages/services';
 import Apply from './Pages/apply';
 import Contacts from './Pages/contact';
 import { LangProvider } from './Context/MainContext';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {

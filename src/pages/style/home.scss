@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import '../../index.scss';
 .container {
   min-height: 100vh;
   .mainLabel {
@@ -7,8 +7,7 @@
     h4 {
       color: #fff !important;
       font-weight: normal;
-      text-align: center;
-      line-height: 2rem;
+      line-height: 2em;
     }
   }
   .headerRow {
@@ -24,7 +23,7 @@
   }
   .separator {
     display: block;
-    content: "";
+    content: '';
     width: 6rem;
     height: 2px;
     margin: 0 auto 3rem auto;
@@ -187,9 +186,6 @@
     padding: 1rem 0.5rem;
     h4 {
       color: #fff !important;
-      font-weight: normal;
-      text-align: center;
-      line-height: 2rem;
     }
   }
 }
