@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import BannerSlider from '../../Components/bannerSlider/BannerSlider.js';
 import images from '../../Assets/images';
 import styles from './footer.module.css';
@@ -7,10 +7,11 @@ import {
   faFacebook,
   faInstagram,
   faWhatsapp,
-  faInstagramSquare,
+  faTelegram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 import IranFlag from '../ui/flags.js';
+import { LangContext } from '../../Context/MainContext';
 const todayDate = new Date().getFullYear();
 const bannersData = [
   {
@@ -54,6 +55,8 @@ const bannersData = [
   },
 ];
 const Footer = () => {
+  const [selectedLang] = useContext(LangContext);
+
   return (
     <>
       <div className={styles.partners}>
@@ -69,57 +72,119 @@ const Footer = () => {
           <section>
             <address>
               <div className={styles.leftAddress}>
-                <IranFlag />
-                IRAN HEAD OFFICE:
-                <br />
-                #1005, 409 Granville St.
-                <br />
-                Vancouver, BC, V6C 1T2
-                <br />
-                PHONE: +17788729855
-                <br />
-                EMAIL: Africa@study2020.ca
+                {selectedLang === 'far' ? (
+                  <div style={{ textAlign: 'right' }}>
+                    <IranFlag />
+                    آدرس دفتر مرکزی ایران :
+                    <br />
+                    --------------------------
+                    <br />
+                    -----------------------------
+                    <br />
+                    تلفن :۲۳۴۹۸۴۹۲
+                    <br />
+                    ایمیل: email@email.com
+                  </div>
+                ) : (
+                  <>
+                    <IranFlag />
+                    IRAN HEAD OFFICE:
+                    <br />
+                    #1005, 409 Granville St.
+                    <br />
+                    Vancouver, BC, V6C 1T2
+                    <br />
+                    PHONE: +17788729855
+                    <br />
+                    EMAIL: email@email.com
+                  </>
+                )}
               </div>
 
-              <div className={styles.socialWrapper}>
-                <h3>find us here</h3>
-                <a
-                  href="https://www.facebook.com/studydiamond.consultancy"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={styles.socials}
+              {selectedLang === 'far' ? (
+                <div
+                  className={styles.socialWrapper}
+                  style={{ textAlign: 'right' }}
                 >
-                  <FontAwesomeIcon icon={faFacebook} size="2x" />
-                  <small>facebook</small>
-                </a>
-                <a
-                  href="https://www.instagram.com/studydiamondltd/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={styles.socials}
-                >
-                  <FontAwesomeIcon icon={faInstagram} size="2x" />
-                  <small>instagram</small>
-                </a>
-                <a
-                  href="https://www.instagram.com/study2020.africa/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={styles.socials}
-                >
-                  <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
-                  <small>instagram africa</small>
-                </a>
-                <a
-                  href="https://wa.me/17786975316"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={styles.socials}
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} size="2x" />
-                  <small>whatsapp</small>
-                </a>
-              </div>
+                  <h3>ما رو دنبال کنین</h3>
+                  <a
+                    href="https://www.facebook.com/studydiamond.consultancy"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <small>فیس‌بوک </small>
+                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/studydiamondltd/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <small>اینستاگرام</small>
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/study2020.africa/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <small>تلگرام &emsp; </small>
+                    <FontAwesomeIcon icon={faTelegram} size="2x" />
+                  </a>
+                  <a
+                    href="https://wa.me/17786975316"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <small>واتس‌اپ &nbsp;</small>
+                    <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+                  </a>
+                </div>
+              ) : (
+                <div className={styles.socialWrapper}>
+                  <h3>find us here</h3>
+                  <a
+                    href="https://www.facebook.com/studydiamond.consultancy"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                    <small>facebook</small>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/studydiamondltd/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    <small>instagram</small>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/study2020.africa/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <FontAwesomeIcon icon={faTelegram} size="2x" />
+                    <small>Telegram</small>
+                  </a>
+                  <a
+                    href="https://wa.me/17786975316"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={styles.socials}
+                  >
+                    <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+                    <small>whatsapp</small>
+                  </a>
+                </div>
+              )}
             </address>
           </section>
 
@@ -172,14 +237,29 @@ const Footer = () => {
           </section>
         </div>
         <footer className={styles.footer}>
-          <FontAwesomeIcon
-            icon={faChevronCircleUp}
-            size="3x"
-            className={styles.chevron}
-            onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
-            title="back to top"
-          />
-          <p>© {todayDate} GreenEarth. All Right Reserved.</p>
+          {selectedLang === 'far' ? (
+            <>
+              <FontAwesomeIcon
+                icon={faChevronCircleUp}
+                size="3x"
+                className={styles.chevronRight}
+                onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
+                title="back to top"
+              />
+              <p>تمام حقوق محفوظ است © {todayDate}</p>
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon
+                icon={faChevronCircleUp}
+                size="3x"
+                className={styles.chevronLeft}
+                onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
+                title="back to top"
+              />
+              <p>© {todayDate} GreenEarth. All Right Reserved.</p>
+            </>
+          )}
         </footer>
       </footer>
     </>

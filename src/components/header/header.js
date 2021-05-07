@@ -64,7 +64,7 @@ const Header = () => {
       to: '/contact',
     },
     {
-      label: 'همراه شدن با ما',
+      label: 'همکاری با ما',
       to: '/apply',
       button: true,
     },
@@ -103,7 +103,6 @@ const Header = () => {
   const farSelected =
     selectedLang === 'far' ? styles.flagDisabled : styles.flag;
   const enSelected = selectedLang === 'en' ? styles.flagDisabled : styles.flag;
-
   return (
     <nav
       className={styles.nav}
@@ -111,12 +110,12 @@ const Header = () => {
       onMouseLeave={handleMouseExist}
     >
       <ul className={wrapperStyles}>
-        <a className={farSelected} onClick={() => setSelectedLang('far')}>
+        <span className={farSelected} onClick={() => setSelectedLang('far')}>
           <IranFlag />
-        </a>
-        <a className={enSelected} onClick={() => setSelectedLang('en')}>
+        </span>
+        <span className={enSelected} onClick={() => setSelectedLang('en')}>
           <EnglishFlag />
-        </a>
+        </span>
         {scrolled ? (
           <div className={styles.scrolledLogoWrapper}>
             <Link to="/">

@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .main {
   position: relative;
@@ -30,14 +30,9 @@
   h3 {
     margin: 0 0 5px 0;
   }
-  // height: 75%;
   a {
-    position: relative;
-    display: inline-flex;
-    align-items: flex-end;
     small {
-      position: absolute;
-      left: 2.2rem;
+      margin-left: 0.5rem;
     }
   }
 }
@@ -123,11 +118,18 @@
   }
 }
 
-.chevron {
+.chevronLeft {
   cursor: pointer;
   position: absolute;
   bottom: 15vh;
   right: 3vw;
+  z-index: 100;
+}
+.chevronRight {
+  cursor: pointer;
+  position: absolute;
+  bottom: 15vh;
+  left: 3vw;
   z-index: 100;
 }
 

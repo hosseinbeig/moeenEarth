@@ -1,11 +1,34 @@
-import React from "react";
-import images from "../Assets/images/index";
-import styles from "./style/team.module.css";
-import Typist from "react-typist";
-
+import React, { useContext } from 'react';
+import images from '../Assets/images/index';
+import styles from './style/team.module.css';
+import Typist from 'react-typist';
+import { LangContext } from '../Context/MainContext';
+import MetaDecorator from '../Utils/MetaDecorator';
 const Team = () => {
+  const [selectedLang, , englishName, farsiName] = useContext(LangContext);
+
+  const metaData =
+    selectedLang === 'far'
+      ? {
+          title: `${farsiName} - همکاران ما`,
+          description: `${farsiName} - همکاران ما`,
+          lang: 'fa',
+          dir: 'rtl',
+        }
+      : {
+          title: `${englishName} - Our Team`,
+          description: `${englishName} - Our Team`,
+          lang: 'en',
+          dir: 'ltr',
+        };
   return (
-    <div className={styles.mainDiv}>
+    <div className={styles.mainDiv} style={{ textAlign: 'center' }}>
+      <MetaDecorator
+        title={metaData.title}
+        description={metaData.description}
+        lang={metaData.lang}
+        dir={metaData.dir}
+      />
       <Typist cursor={{ show: false }}>
         <h1>Our Team</h1>
       </Typist>

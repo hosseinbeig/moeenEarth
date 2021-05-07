@@ -1,19 +1,43 @@
-import React from "react";
-import Typist from "react-typist";
-import CustomButton from "../Components/button/CustomButton";
-import styles from "./style/services.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext } from 'react';
+import Typist from 'react-typist';
+import CustomButton from '../Components/button/CustomButton';
+import styles from './style/services.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPeopleArrows,
   faFileAlt,
   faPassport,
   faLaptopHouse,
-} from "@fortawesome/free-solid-svg-icons";
-import { faWpforms } from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
+import { faWpforms } from '@fortawesome/free-brands-svg-icons';
+import { LangContext } from '../Context/MainContext';
+import MetaDecorator from '../Utils/MetaDecorator';
 
 const Services = () => {
+  const [selectedLang, , englishName, farsiName] = useContext(LangContext);
+  const dataAlignment = selectedLang === 'far' ? 'right' : 'left';
+  const metaData =
+    selectedLang === 'far'
+      ? {
+          title: `${farsiName} - خدمات ما`,
+          description: `${farsiName} - خدمات ما`,
+          lang: 'fa',
+          dir: 'rtl',
+        }
+      : {
+          title: `${englishName} - Services`,
+          description: `${englishName} - Services`,
+          lang: 'en',
+          dir: 'ltr',
+        };
   return (
-    <div className={styles.mainDiv}>
+    <div className={styles.mainDiv} style={{ textAlign: dataAlignment }}>
+      <MetaDecorator
+        title={metaData.title}
+        description={metaData.description}
+        lang={metaData.lang}
+        dir={metaData.dir}
+      />
       <Typist cursor={{ show: false }}>
         <h1>Our Services</h1>
       </Typist>

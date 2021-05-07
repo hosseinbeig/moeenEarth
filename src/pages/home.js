@@ -18,20 +18,20 @@ import {
 import { mainDescription } from '../Assets/data/multi-ling';
 
 const Home = () => {
-  const [selectedLang] = useContext(LangContext);
+  const [selectedLang, , englishName, farsiName] = useContext(LangContext);
 
   const dataAlignment = selectedLang === 'far' ? 'right' : 'left';
   const metaData =
     selectedLang === 'far'
       ? {
-          title: 'خانه',
-          description: 'صفحه اصلی زمین سبز',
+          title: `${farsiName} -  خانه`,
+          description: `${farsiName} -  خانه`,
           lang: 'fa',
           dir: 'rtl',
         }
       : {
-          title: 'Home',
-          description: 'Home Green Earth',
+          title: `${englishName} - Home`,
+          description: `${englishName} - Home`,
           lang: 'en',
           dir: 'ltr',
         };
