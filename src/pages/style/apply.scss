@@ -1,10 +1,10 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .mainDiv {
   position: relative;
   padding: 11rem 0 2rem 0;
   min-height: 100vh;
-  background: url("../../Assets/images/banners/David51.jpg");
+  background: url('../../Assets/images/banners/applyBg.jpg');
   background-attachment: fixed;
   background-position: center 6rem;
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@
   }
 
   &::after {
-    content: " ";
+    content: ' ';
     position: absolute;
     top: 0;
     width: 100%;

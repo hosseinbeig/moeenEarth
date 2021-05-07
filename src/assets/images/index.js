@@ -26,7 +26,6 @@ import partner13 from './partners/partner13.jpg';
 // team
 
 // other
-import counsel from './banners/counsel.jpg';
 import contact from './banners/contact.png';
 import services from './banners/services.jpg';
 import iranFlag from './iran-flag.png';
@@ -63,7 +62,6 @@ const images = {
     partner12,
     partner13,
     // other
-    counsel,
     services,
     contact,
     iranFlag,
